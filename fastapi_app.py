@@ -5,15 +5,22 @@ from agent import BudgetAgent
 import logging
 import uvicorn
 import os 
+from fastapi.middleware.cors import CORSMiddleware
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
 app = FastAPI(title="Agentic Budget Bot API")
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # or ["http://localhost:3000"] for specific frontend
+    allow_credentials=True,
+    allow_methods=["*"],  # allow POST, OPTIONS, GET etc.
+    allow_headers=["*"],  # allow all headers
+)
 class QueryRequest(BaseModel):
-    query: str
+    message: str
 
 class QueryResponse(BaseModel):
     response: str
@@ -46,6 +53,7 @@ async def favicon():
     """
     return JSONResponse(status_code=204, content={})
 
+
 @app.post("/query", response_model=QueryResponse)
 async def process_query(request: QueryRequest):
     """
@@ -55,7 +63,7 @@ async def process_query(request: QueryRequest):
         # Pass the model provider from .env or default to 'openrouter'
         model_provider = os.getenv("MODEL_PROVIDER", "openrouter")
         agent = BudgetAgent(model_provider=model_provider)
-        result = agent.run(request.query)
+        result = agent.run(request.message)
         return QueryResponse(
             response=result["response"],
             follow_up_questions=result["follow_up_questions"],
@@ -66,4 +74,4 @@ async def process_query(request: QueryRequest):
         raise HTTPException(status_code=500, detail=f"Error processing query: {str(e)}")
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="192.168.1.100", port=8000)

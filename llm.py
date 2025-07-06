@@ -16,7 +16,7 @@ class LLMClient:
         if self.model_provider == "openrouter":
             self.api_key = os.getenv("OPENROUTER_API_KEY")
             self.api_url = os.getenv("OPENROUTER_API_URL", "https://openrouter.ai/api/v1")
-            self.model = "qwen/qwen-3-32b"  # Qwen 3 32B for OpenRouter
+            self.model = "qwen/qwen3-32b:free"  # Qwen 3 32B for OpenRouter
             if not self.api_key:
                 logger.error("OPENROUTER_API_KEY not found in .env file")
                 raise ValueError("OPENROUTER_API_KEY is required for OpenRouter")
