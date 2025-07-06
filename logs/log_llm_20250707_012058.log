@@ -1,0 +1,31 @@
+2025-07-07 01:20:58,564 - fastapi_app - INFO - Initializing global BudgetAgent with model provider: openrouter
+2025-07-07 01:20:58,566 - agent - INFO - Initializing BudgetAgent with model provider: openrouter
+2025-07-07 01:20:58,568 - llm - INFO - Initializing LLMClient with model provider: openrouter
+2025-07-07 01:20:58,569 - agent - INFO - LangGraph workflow built
+2025-07-07 01:20:58,646 - __main__ - INFO - Starting FastAPI server...
+2025-07-07 01:21:03,039 - fastapi_app - INFO - Processing query: How much for a website with e-commerce features? with thread_id: 1
+2025-07-07 01:21:03,042 - agent - INFO - Running agent with query: How much for a website with e-commerce features? and thread_id: 1
+2025-07-07 01:21:03,043 - agent - INFO - No previous checkpoint found.
+2025-07-07 01:21:03,057 - agent - INFO - Classifying query: How much for a website with e-commerce features?
+2025-07-07 01:21:03,058 - prompts - INFO - Classification prompt generated
+2025-07-07 01:21:03,071 - llm - ERROR - Failed to call openrouter API: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002686FB4FFE0>: Failed to resolve 'openrouter.ai' ([Errno 11001] getaddrinfo failed)"))
+2025-07-07 01:21:03,071 - agent - ERROR - Failed to extract response text from LLM response
+2025-07-07 01:21:03,074 - agent - INFO - Processing general query: How much for a website with e-commerce features?
+2025-07-07 01:21:03,074 - prompts - INFO - General prompt generated
+2025-07-07 01:21:03,082 - llm - ERROR - Failed to call openrouter API: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002686FCFE780>: Failed to resolve 'openrouter.ai' ([Errno 11001] getaddrinfo failed)"))
+2025-07-07 01:21:03,085 - agent - ERROR - Failed to extract response text from LLM response
+2025-07-07 01:21:03,089 - agent - INFO - Checkpoint successfully saved.
+2025-07-07 01:21:03,090 - agent - INFO - Final agent result: {
+  "query": "How much for a website with e-commerce features?",
+  "response": "Sorry, I couldn't process your query.",
+  "follow_up_questions": [],
+  "budget_estimation": "",
+  "conversation_history": [
+    {
+      "query": "How much for a website with e-commerce features?",
+      "response": "Sorry, I couldn't process your query."
+    }
+  ],
+  "is_project_related": false
+}
+2025-07-07 01:21:03,090 - fastapi_app - INFO - Query response: {'query': 'How much for a website with e-commerce features?', 'response': "Sorry, I couldn't process your query.", 'follow_up_questions': [], 'budget_estimation': '', 'conversation_history': [{'query': 'How much for a website with e-commerce features?', 'response': "Sorry, I couldn't process your query."}], 'is_project_related': False}

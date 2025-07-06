@@ -1,0 +1,31 @@
+2025-07-07 01:19:00,733 - fastapi_app - INFO - Initializing global BudgetAgent with model provider: gemini
+2025-07-07 01:19:00,735 - agent - INFO - Initializing BudgetAgent with model provider: gemini
+2025-07-07 01:19:00,736 - llm - INFO - Initializing LLMClient with model provider: gemini
+2025-07-07 01:19:00,738 - agent - INFO - LangGraph workflow built
+2025-07-07 01:19:00,810 - __main__ - INFO - Starting FastAPI server...
+2025-07-07 01:19:03,996 - fastapi_app - INFO - Processing query: What’s the budget for a Flutter app with payment integration? with thread_id: 1
+2025-07-07 01:19:03,999 - agent - INFO - Running agent with query: What’s the budget for a Flutter app with payment integration? and thread_id: 1
+2025-07-07 01:19:04,000 - agent - INFO - No previous checkpoint found.
+2025-07-07 01:19:04,020 - agent - INFO - Classifying query: What’s the budget for a Flutter app with payment integration?
+2025-07-07 01:19:04,021 - prompts - INFO - Classification prompt generated
+2025-07-07 01:19:04,042 - llm - ERROR - Failed to call gemini API: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Max retries exceeded with url: /v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyCJscY_qbI8Mb-cJaJJ9zeFr7tVHUjF-xo (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000207F282EA20>: Failed to resolve 'generativelanguage.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+2025-07-07 01:19:04,046 - agent - ERROR - Failed to extract response text from LLM response
+2025-07-07 01:19:04,048 - agent - INFO - Processing general query: What’s the budget for a Flutter app with payment integration?
+2025-07-07 01:19:04,049 - prompts - INFO - General prompt generated
+2025-07-07 01:19:04,068 - llm - ERROR - Failed to call gemini API: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Max retries exceeded with url: /v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyCJscY_qbI8Mb-cJaJJ9zeFr7tVHUjF-xo (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000207F2ADF230>: Failed to resolve 'generativelanguage.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+2025-07-07 01:19:04,075 - agent - ERROR - Failed to extract response text from LLM response
+2025-07-07 01:19:04,084 - agent - INFO - Checkpoint successfully saved.
+2025-07-07 01:19:04,092 - agent - INFO - Final agent result: {
+  "query": "What’s the budget for a Flutter app with payment integration?",
+  "response": "Sorry, I couldn't process your query.",
+  "follow_up_questions": [],
+  "budget_estimation": "",
+  "conversation_history": [
+    {
+      "query": "What’s the budget for a Flutter app with payment integration?",
+      "response": "Sorry, I couldn't process your query."
+    }
+  ],
+  "is_project_related": false
+}
+2025-07-07 01:19:04,097 - fastapi_app - INFO - Query response: {'query': 'What’s the budget for a Flutter app with payment integration?', 'response': "Sorry, I couldn't process your query.", 'follow_up_questions': [], 'budget_estimation': '', 'conversation_history': [{'query': 'What’s the budget for a Flutter app with payment integration?', 'response': "Sorry, I couldn't process your query."}], 'is_project_related': False}

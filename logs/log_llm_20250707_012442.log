@@ -1,0 +1,31 @@
+2025-07-07 01:24:42,129 - fastapi_app - INFO - Initializing global BudgetAgent with model provider: openrouter
+2025-07-07 01:24:42,132 - agent - INFO - Initializing BudgetAgent with model provider: openrouter
+2025-07-07 01:24:42,134 - llm - INFO - Initializing LLMClient with model provider: openrouter
+2025-07-07 01:24:42,137 - agent - INFO - LangGraph workflow built
+2025-07-07 01:24:42,229 - __main__ - INFO - Starting FastAPI server...
+2025-07-07 01:24:42,475 - fastapi_app - INFO - Processing query: How much for a website with e-commerce features? with thread_id: 1
+2025-07-07 01:24:42,477 - agent - INFO - Running agent with query: How much for a website with e-commerce features? and thread_id: 1
+2025-07-07 01:24:42,477 - agent - INFO - No previous checkpoint found.
+2025-07-07 01:24:42,539 - agent - INFO - Classifying query: How much for a website with e-commerce features?
+2025-07-07 01:24:42,540 - prompts - INFO - Classification prompt generated
+2025-07-07 01:24:44,300 - llm - ERROR - Failed to call openrouter API: 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions
+2025-07-07 01:24:44,301 - agent - ERROR - Failed to extract response text from LLM response
+2025-07-07 01:24:44,303 - agent - INFO - Processing general query: How much for a website with e-commerce features?
+2025-07-07 01:24:44,303 - prompts - INFO - General prompt generated
+2025-07-07 01:24:46,155 - llm - ERROR - Failed to call openrouter API: 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions
+2025-07-07 01:24:46,156 - agent - ERROR - Failed to extract response text from LLM response
+2025-07-07 01:24:46,157 - agent - INFO - Checkpoint successfully saved.
+2025-07-07 01:24:46,158 - agent - INFO - Final agent result: {
+  "query": "How much for a website with e-commerce features?",
+  "response": "Sorry, I couldn't process your query.",
+  "follow_up_questions": [],
+  "budget_estimation": "",
+  "conversation_history": [
+    {
+      "query": "How much for a website with e-commerce features?",
+      "response": "Sorry, I couldn't process your query."
+    }
+  ],
+  "is_project_related": false
+}
+2025-07-07 01:24:46,159 - fastapi_app - INFO - Query response: {'query': 'How much for a website with e-commerce features?', 'response': "Sorry, I couldn't process your query.", 'follow_up_questions': [], 'budget_estimation': '', 'conversation_history': [{'query': 'How much for a website with e-commerce features?', 'response': "Sorry, I couldn't process your query."}], 'is_project_related': False}

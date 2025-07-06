@@ -1,0 +1,2 @@
+2025-07-07 01:19:44,145 - fastapi_app - INFO - Initializing global BudgetAgent with model provider: None
+2025-07-07 01:19:44,147 - agent - INFO - Initializing BudgetAgent with model provider: None

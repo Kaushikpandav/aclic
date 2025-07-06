@@ -1,0 +1,31 @@
+2025-07-07 01:17:32,709 - fastapi_app - INFO - Initializing global BudgetAgent with model provider: gemini
+2025-07-07 01:17:32,727 - agent - INFO - Initializing BudgetAgent with model provider: gemini
+2025-07-07 01:17:32,729 - llm - INFO - Initializing LLMClient with model provider: gemini
+2025-07-07 01:17:32,731 - agent - INFO - LangGraph workflow built
+2025-07-07 01:17:32,814 - __main__ - INFO - Starting FastAPI server...
+2025-07-07 01:17:41,128 - fastapi_app - INFO - Processing query: im ansh  with thread_id: 1
+2025-07-07 01:17:41,130 - agent - INFO - Running agent with query: im ansh  and thread_id: 1
+2025-07-07 01:17:41,133 - agent - INFO - No previous checkpoint found.
+2025-07-07 01:17:41,147 - agent - INFO - Classifying query: im ansh 
+2025-07-07 01:17:41,152 - prompts - INFO - Classification prompt generated
+2025-07-07 01:17:41,172 - llm - ERROR - Failed to call gemini API: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Max retries exceeded with url: /v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyCJscY_qbI8Mb-cJaJJ9zeFr7tVHUjF-xo (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020E53BA15B0>: Failed to resolve 'generativelanguage.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+2025-07-07 01:17:41,172 - agent - ERROR - Failed to extract response text from LLM response
+2025-07-07 01:17:41,174 - agent - INFO - Processing general query: im ansh 
+2025-07-07 01:17:41,174 - prompts - INFO - General prompt generated
+2025-07-07 01:17:41,177 - llm - ERROR - Failed to call gemini API: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Max retries exceeded with url: /v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyCJscY_qbI8Mb-cJaJJ9zeFr7tVHUjF-xo (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020E53B7F710>: Failed to resolve 'generativelanguage.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+2025-07-07 01:17:41,178 - agent - ERROR - Failed to extract response text from LLM response
+2025-07-07 01:17:41,182 - agent - INFO - Checkpoint successfully saved.
+2025-07-07 01:17:41,184 - agent - INFO - Final agent result: {
+  "query": "im ansh ",
+  "response": "Sorry, I couldn't process your query.",
+  "follow_up_questions": [],
+  "budget_estimation": "",
+  "conversation_history": [
+    {
+      "query": "im ansh ",
+      "response": "Sorry, I couldn't process your query."
+    }
+  ],
+  "is_project_related": false
+}
+2025-07-07 01:17:41,184 - fastapi_app - INFO - Query response: {'query': 'im ansh ', 'response': "Sorry, I couldn't process your query.", 'follow_up_questions': [], 'budget_estimation': '', 'conversation_history': [{'query': 'im ansh ', 'response': "Sorry, I couldn't process your query."}], 'is_project_related': False}
